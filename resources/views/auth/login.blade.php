@@ -8,7 +8,6 @@
 
 {{-- Breadcrumbs --}}
 @section('breadcrumbs')
-    {!! Breadcrumbs::render('login') !!}
 @endsection
 
 @section('content')

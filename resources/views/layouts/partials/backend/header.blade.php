@@ -34,7 +34,6 @@
 
                             <p>
                                 {{ Auth::user()->name }}
-                                <small>Member since {{ Carbon::parse(Auth::user()->created_at)->toFormattedDateString() }}</small>
                             </p>
                         </li>
                         <!-- Menu Footer-->

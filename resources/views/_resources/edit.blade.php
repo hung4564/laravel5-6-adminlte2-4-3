@@ -13,7 +13,7 @@ $_printLink = false;
 
 {{-- Breadcrumbs --}}
 @section('breadcrumbs')
-    {!! Breadcrumbs::render($resourceRoutesAlias.'.edit', $record->id) !!}
+    {{-- {!! Breadcrumbs::render($resourceRoutesAlias.'.edit', $record->id) !!} --}}
 @endsection
 
 {{-- Page Title --}}
