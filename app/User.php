@@ -2,8 +2,8 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'is_admin', 'logo_number',
     ];
 
     /**
@@ -26,4 +26,27 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    /**
+     * @return boolean
+     */
+    public function isAdmin()
+    {
+        return (int) $this->is_admin === 1;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLogoPath()
+    {
+        return Utils::logoPath($this->logo_number);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRecordTitle()
+    {
+        return $this->name;
+    }
 }
